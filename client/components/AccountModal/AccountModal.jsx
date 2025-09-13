@@ -11,7 +11,7 @@ const AccountModal = () => {
   };
   return (
     <div>
-      <div className="content fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white py-6 px-8 rounded-lg shadow-lg w-[calc(100%_-_40px)]">
+      <div className="content fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white py-6 px-8 rounded-lg shadow-lg w-[calc(100%_-_40px)] max-h-[calc(100%_-_150px)] overflow-y-auto">
         <div className="flex justify-end mb-3">
           <button>
             <CloseIcon />
