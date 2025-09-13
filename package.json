@@ -11,6 +11,7 @@
   "author": "Anit Bishwas",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.13",
     "compression": "^1.8.1",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
@@ -18,7 +19,8 @@
     "raviger": "^5.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "serve-static": "^2.2.0"
+    "serve-static": "^2.2.0",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",

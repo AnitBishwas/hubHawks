@@ -3,16 +3,13 @@ import "dotenv/config";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 
-
-console.log(dirname(fileURLToPath(import.meta.url)))
 export default defineConfig({
-    define: {
-    appOrigin: JSON.stringify(
-      process.env.APP_ORIGIN.replace(/https:\/\//, "")
-    ),
+  define: {
+    appOrigin: JSON.stringify(process.env.APP_ORIGIN.replace(/https:\/\//, "")),
   },
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   build: {
     outDir: "../dist/client/",
   },

@@ -1,13 +1,16 @@
-import { useRoutes,Link } from "raviger";
+import { useRoutes } from "raviger";
 import routes from "./Routes";
+import AccountModal from "./components/AccountModal/AccountModal";
 
-const App = () =>{
-    console.log(routes)
-    const route = useRoutes(routes);
+const App = () => {
+  const route = useRoutes(routes);
 
-    return <>
-    {route}
+  return (
+    <>
+      <AccountModal />
+      {route}
     </>
+  );
 };
 
 export default App;

@@ -10,7 +10,7 @@ const isDev = process.env.NODE_ENV === "dev";
 const createServer = async (root = process.cwd()) => {
   const app = e();
   app.use(e.json());
-
+  
 
   if (isDev) {
     const vite = await createViteServer({
