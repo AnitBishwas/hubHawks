@@ -3,6 +3,11 @@ import e from "express";
 import { createServer as createViteServer } from "vite";
 import path, { resolve } from "path";
 import fs from "fs";
+import appRoutes from "./routes/index.js";
+import mongoose from "mongoose";
+import { verifyJwtToken } from "./middlewares/verifyUserRequest.js";
+import cookieParser from "cookie-parser";
+import profileRoutes from "./routes/profile.js";
 
 const PORT = process.env.PORT || 8080;
 const isDev = process.env.NODE_ENV === "dev";
@@ -10,7 +15,15 @@ const isDev = process.env.NODE_ENV === "dev";
 const createServer = async (root = process.cwd()) => {
   const app = e();
   app.use(e.json());
+  app.use(cookieParser());
+
+  app.use("/api", appRoutes);
+  app.use("/profile",verifyJwtToken,profileRoutes);
   
+  mongoose.connect(process.env.MONGO_URL);
+  mongoose.connection.on("connected", () => {
+    console.log("Mongoose default connection open");
+  });
 
   if (isDev) {
     const vite = await createViteServer({

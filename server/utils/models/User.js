@@ -15,14 +15,20 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
+      unique: true,
     },
     freelancer: {
       type: Boolean,
-      required: true,
     },
     profile: {
       type: String,
     },
+    password:{
+      type: String
+    },
+    googleId: {
+      type: String
+    }
   },
   {
     timestamps: true,

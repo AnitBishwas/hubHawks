@@ -1,15 +1,16 @@
 import { useRoutes } from "raviger";
 import routes from "./Routes";
-import AccountModal from "./components/AccountModal/AccountModal";
+import Layout from "./Layout";
+import { UserContextProvider } from "./Providers/UserContext";
 
 const App = () => {
   const route = useRoutes(routes);
 
   return (
-    <>
-      <AccountModal />
+    <UserContextProvider>
+      <Layout />
       {route}
-    </>
+    </UserContextProvider>
   );
 };
 
